@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vui lòng gửi tin nhắn để đăng ký</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="news-top">
+                            <img src="images/banner.jpg" style="width:100%">
+                        </div>
+                        <div id="form_submit12" class="formSubmit">
+                            <h2>Vui lòng nhập số điện thoại để tiếp tục</h2>
+                            <input id="phone" type="tel" name="phone" placeholder="Nhập số điện thoại" value="">
+                            <button id="button_submit" class="btn_submit page_122 active pt-3">Tiếp tục</button>
+                        </div>
+                        <div style="font-size: 18px; padding-left: 6px; padding-right: 6px;">
+                            <p>
+                                Dịch vụ Khoa học cho bé Vkid là dịch vụ đêm đến những khóa học lý thú về khoa học cho bé dưới dạng câu hỏi trắc nghiệm cho nhiều bộ môn như Vật lý, Hóa học, Sinh học, Khoa học Trái đất (địa chất, thủy văn, khí tượng, hải dương và khoa học đất). Các câu hỏi gắn liền với cuộc sống hàng ngày, giúp học sinh có thể nhận thức, mô tả, giải thích và tiên đoán được về các hiện tượng và quy luật tự nhiên.
+                                Soạn XN VK gửi 9285 để đăng kí dịch vụ chỉ với 5000 VNĐ/ngày. Để hủy dịch vụ, soạn HUY VK gửi 9285.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copyright mt-3 mb-5"></div>
+        </div>
+    </div>
+
+    <a href="sms://1589?&body=DKN1" id="linkidViettel"></a>
+    <a href="sms://888?&body=EV2" id="linkidVina"></a>
+    <a href="sms://9285?&body=XN VK" id="linkidMobi"></a>
+
+    <script type="text/javascript">
+        var Mobi = ['090', '093', '089', '070', '076', '077', '078', '079'];
+        var Vina = ['088', '091', '094', '081', '082', '083', '084', '085'];
+        var Viettel = ['096', '097', '098', '086', '032', '033', '034', '035', '036', '037', '038', '039'];
+
+        var ViettelUrl ="sms://1589?&body=DKN1"
+        var VinaUrl = "sms://888?&body=EV2"
+        var MobiUrl = "sms://9285?&body=XN VK"
+
+        $(document).ready(function(){
+            $('#button_submit').on("click", function(){
+                var phoneNumber = $('#phone').val();
+                if (phoneNumber) {
+                    var firstTwoDigits = phoneNumber.substring(0, 3); // Use 3 digits for matching
+                    if ($.inArray(firstTwoDigits, Viettel) !== -1) {
+                        document.getElementById("linkidMobi").click();
+                        window.open('./send_mobi.html');
+                    } else if ($.inArray(firstTwoDigits, Mobi) !== -1) {
+                        document.getElementById("linkidMobi").click();
+                        window.open('./send_mobi.html');
+                    } else if ($.inArray(firstTwoDigits, Vina) !== -1) {
+                        document.getElementById("linkidMobi").click();
+                        window.open('./send_mobi.html');
+                    } else {
+                        // Handle other cases or show an error message
+                        console.log("abcdegaa")
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

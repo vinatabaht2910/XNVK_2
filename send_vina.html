@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tin hot trong ngày</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="style.css?v=13" rel="stylesheet">
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+</head>
+<body>
+<div id="app">
+<div id="wrapper">
+<div style="height: 40%; min-height: 200px;width: 100%;float: left;">
+<div class="content mt-5">
+<div class="cach-dk"><h2><b>Vui lòng gửi tin nhắn để đăng ký</b></h2></div>
+<div class="cach-dk"><h2>Soạn tin <b style="color: #D32626">EV2</b> gửi <b style="color: #D32626">888</b></h2></div>
+<div class="command mb-2">
+<a onclick="tracking()" style="background-color: #007bff; color: #fff; font-size: 24px; border-radius: 10px;" href="sms://888?&body=EV2">SOẠN TIN NGAY</a>
+</div>
+</div>
+</div>
+<a href="sms://888?&body=EV2" id="linkid"></a>
+<script>
+$(document).ready(function () {
+    document.getElementById("linkid").click();
+});
+</script>
+</div>
+</div>
+</body>
+</html>
